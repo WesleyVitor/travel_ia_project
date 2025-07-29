@@ -8,3 +8,5 @@ gradio==5.38.0
 mcp==1.12.2
 langgraph==0.5.4
 langchain-openai==0.3.28
+
+requests==2.32.4
