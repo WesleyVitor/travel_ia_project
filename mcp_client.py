@@ -5,8 +5,6 @@ from contextlib import AsyncExitStack
 from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
 
-from mcp import ClientSession, StdioServerParameters
-from mcp.client.stdio import stdio_client
 
 class MCPClient:
     async def airbnb_search(self, location: str) -> None:
