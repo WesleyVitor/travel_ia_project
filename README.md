@@ -1,3 +1,9 @@
+---
+title: travel_ai_project
+app_file: index.py
+sdk: gradio
+sdk_version: 5.38.0
+---
 # Goal
 
 Build an application that transcribes and translates audio input to generate a personalized travel itinerary.

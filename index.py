@@ -7,7 +7,6 @@ from langchain_openai import ChatOpenAI
 
 from tools import airbnb_search, duffel_search
 from agent import Agent
-from agent2 import Agent as Agent2
 
 import gradio as gr
 
