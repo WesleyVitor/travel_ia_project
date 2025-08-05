@@ -7,6 +7,7 @@ from langchain_openai import ChatOpenAI
 
 from tools import airbnb_search, duffel_search
 from agent import Agent
+from agent2 import Agent as Agent2
 
 import gradio as gr
 
@@ -15,7 +16,7 @@ def handle_audio(file_path):
     output = ""
     llm = ChatOpenAI(
         temperature=0.0, 
-        model="gpt-4o-mini", 
+        model="gpt-4.1-mini", 
         api_key=os.getenv("OPENAI_API_KEY")
     )
 
@@ -36,12 +37,13 @@ def handle_audio(file_path):
         )
 
         # user_m = """
-        # Eu moro em são paulo e entre a data 2025-08-10 e a data 2025-08-13, eu quero passar 5 dias na cidade de Miami. 
-        # Estou disposto a gastar o valor 400 dolares em passagens e 1000 reais em hospedagem. 
-        # Para a hospedagem, quero ficar em um quarto com as seguintes características: com wifi. 
+        # Eu moro em são paulo e entre 10 de agosto de 2025 e 13 de agosto de 2025, eu quero passar 3 dias na cidade de Miami. 
+        # Estou disposto a gastar o valor 400 dolares em passagens e 1000 dolares em hospedagem. 
+        # Para a hospedagem, quero ficar em um quarto com wifi. 
         # Quais opções eu tenho?
         # """
         messages = [HumanMessage(content=translation.text),]
+        print(messages)
         result = agent.graph.invoke({"messages": messages})
         #print(result['messages'][-1].content)
         output = result['messages'][-1].content
